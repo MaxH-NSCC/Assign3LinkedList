@@ -234,13 +234,27 @@ void merge_sorted_lists() {
 
 // Split linked list into two halves
 // First half is 1/2 the size of the linked list other half is the remaining nodes
-void split_list(LinkedListNode *head, LinkedListNode **left, LinkedListNode **right) {
-    if (head == NULL || head->next == NULL) {
-        *left = head;
+void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right) {
+    if (list == NULL || list->head->next == NULL) {
+        *left = NULL;
         *right = NULL;
         return;
     }
-    
+    size_t size = list_size(list);
+    if (size == 2) {
+        *left = list->head;
+        *right = NULL;
+        return;
+    }
+
+    LinkedListNode * cursor = list->head;
+    for (size_t i = 0; i < (size / 2); i++) {
+        cursor = cursor->next;
+    }
+
+    *left = list->head;
+    *right = cursor->next;
+    cursor->next = NULL;
 };
 
 // Recursively sorts the linked list using merge sort
