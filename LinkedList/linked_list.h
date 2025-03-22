@@ -62,6 +62,8 @@ void list_iterator_destroy(ListIterator *iter);
 // Compares two ints returning 1 if a is greater, -1 if b is greater and 0 if neither of those are true
 int compare_ints(const void *a, const void *b);
 
+LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, int (*compare)(const void *, const void *));
+
 void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right);
 
 #endif //LINKED_LIST_H

@@ -41,5 +41,5 @@ int main(void) {
         printf("split_list failed\n");
     }
     return 0;
-    
+
 }

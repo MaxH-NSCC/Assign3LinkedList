@@ -227,9 +227,14 @@ int compare_ints(const void *a, const void *b) {
     }
 }
 
-// Merge two linked lists into one sorted list
-void merge_sorted_lists() {
+int compare_chars();
 
+int compare_floats();
+
+// Merge two linked lists into one sorted list
+LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, int (*compare)(const void *, const void *)) {
+    if (left == NULL) return right;
+    if (right == NULL) return left;
 };
 
 // Split linked list into two halves
