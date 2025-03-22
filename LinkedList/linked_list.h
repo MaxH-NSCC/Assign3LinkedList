@@ -6,6 +6,8 @@
 // Our linked list structure.
 typedef struct LinkedList LinkedList;
 
+typedef struct LinkedListNode LinkedListNode;
+
 // Linked list functions
 
 // Creates and initializes an empty linked list
@@ -59,5 +61,7 @@ void list_iterator_destroy(ListIterator *iter);
 
 // Compares two ints returning 1 if a is greater, -1 if b is greater and 0 if neither of those are true
 int compare_ints(const void *a, const void *b);
+
+void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right);
 
 #endif //LINKED_LIST_H

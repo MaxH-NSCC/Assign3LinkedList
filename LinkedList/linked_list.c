@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 // Linked list structures
-typedef struct LinkedListNode {
+struct LinkedListNode {
     void * data;
     struct LinkedListNode * next;
-} LinkedListNode;
+};
 
 struct LinkedList {
     size_t size;
