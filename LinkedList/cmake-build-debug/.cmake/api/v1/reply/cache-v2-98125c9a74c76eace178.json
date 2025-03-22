@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Max Gave/Desktop/C/Assign3/LinkedList/cmake-build-debug"
+			"value" : "c:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Max Gave/Desktop/C/Assign3/LinkedList/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Max Gave/Desktop/C/Assign3/LinkedList"
+			"value" : "C:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -515,7 +515,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/LinkedList"
+			"value" : "C:/Program Files (x86)/LinkedLists"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -731,7 +731,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "LinkedList"
+			"value" : "LinkedLists"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1126,7 +1126,7 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "LinkedList_BINARY_DIR",
+			"name" : "LinkedLists_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1135,10 +1135,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Max Gave/Desktop/C/Assign3/LinkedList/cmake-build-debug"
+			"value" : "C:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList/cmake-build-debug"
 		},
 		{
-			"name" : "LinkedList_IS_TOP_LEVEL",
+			"name" : "LinkedLists_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1150,7 +1150,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "LinkedList_SOURCE_DIR",
+			"name" : "LinkedLists_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1159,7 +1159,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Max Gave/Desktop/C/Assign3/LinkedList"
+			"value" : "C:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

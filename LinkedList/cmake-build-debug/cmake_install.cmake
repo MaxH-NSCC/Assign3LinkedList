@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/Max Gave/Desktop/C/Assign3/LinkedList
+# Install script for directory: C:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/LinkedList")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/LinkedLists")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Max Gave/Desktop/C/Assign3/LinkedList/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Max Gave/Desktop/C/Assign3LinkedList/LinkedList/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

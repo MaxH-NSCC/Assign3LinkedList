@@ -212,3 +212,17 @@ void list_iterator_destroy(ListIterator *iter) {
     if (iter == NULL) return;
     free(iter);
 };
+
+// Compares two ints returning 1 if a is greater, -1 if b is greater and 0 if neither of those are true
+// casts void pointers to ints so it can be compared and returns the results
+int compare_ints(const void *a, const void *b) {
+    int *int_a = (int*)a;
+    int *int_b = (int*)b;
+    if (*int_a > *int_b) {
+        return 1;
+    } else if (*int_a < *int_b) {
+        return -1;
+    } else {
+        return 0;
+    }
+}

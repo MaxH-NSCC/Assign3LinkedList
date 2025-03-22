@@ -57,4 +57,7 @@ void list_iterator_reset(ListIterator *iter);
 // notice this has nothing to do with the list that this iterator is pointing to
 void list_iterator_destroy(ListIterator *iter);
 
+// Compares two ints returning 1 if a is greater, -1 if b is greater and 0 if neither of those are true
+int compare_ints(const void *a, const void *b);
+
 #endif //LINKED_LIST_H
