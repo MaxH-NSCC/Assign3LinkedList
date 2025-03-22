@@ -234,6 +234,9 @@ void merge_sorted_lists() {
 
 // Split linked list into two halves
 // First half is 1/2 the size of the linked list other half is the remaining nodes
+// Centre position is calculated by getting size/2
+// Finds the middle of the linked list by iterating through it until it reaches the centre
+// Split list at middle point
 void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right) {
     if (list == NULL || list->head->next == NULL) {
         *left = NULL;
