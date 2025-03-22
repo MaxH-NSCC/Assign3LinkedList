@@ -232,9 +232,25 @@ int compare_chars();
 int compare_floats();
 
 // Merge two linked lists into one sorted list
+// Takes two list nodes left and right that represent sorted lists
+// Recursively merge the nodes together in order
+// Function uses comparison function compare to determine the sorting type and returns the proper sorting order
+// Returns the head of the sorted list
 LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, int (*compare)(const void *, const void *)) {
     if (left == NULL) return right;
     if (right == NULL) return left;
+
+    LinkedListNode *result = NULL;
+
+    if (compare(left->data, right->data) <= 0) {
+        result = left;
+        result->next = merge_sorted_lists(left->next, right, compare);
+    } else {
+        result = right;
+        result->next = merge_sorted_lists(left, right->next, compare);
+    }
+
+    return result;
 };
 
 // Split linked list into two halves
