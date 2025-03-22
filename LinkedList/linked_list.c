@@ -228,14 +228,27 @@ int compare_ints(const void *a, const void *b) {
 }
 
 // Merge two linked lists into one sorted list
-void merge_sorted_lists();
+void merge_sorted_lists() {
+
+};
 
 // Split linked list into two halves
 // First half is 1/2 the size of the linked list other half is the remaining nodes
-void split_list();
+void split_list(LinkedListNode *head, LinkedListNode **left, LinkedListNode **right) {
+    if (head == NULL || head->next == NULL) {
+        *left = head;
+        *right = NULL;
+        return;
+    }
+    
+};
 
 // Recursively sorts the linked list using merge sort
-void merge_sort_nodes();
+void merge_sort_nodes() {
+
+};
 
 // Sorts a linked list using the merge sort
-void list_merge_sort();
+void list_merge_sort() {
+
+};
