@@ -3,20 +3,23 @@
 #include <stddef.h>
 #include "linked_list.h"
 
-int main(void) {
+// Function to test sorting with different data sets
+void test_merge_sort(int *values, size_t count, const char *test_name) {
+    printf("\n=== %s ===\n", test_name);
+
     // Create a linked list
     LinkedList *list = list_create();
     if (!list) {
         printf("Failed to create list.\n");
-        return 1;
+        return;
     }
 
-    // Add unordered ints
-    int values[] = {4, 1, 7, 3, 9, 2, 6, 5, 8, 0};
-    for (int i = 0; i < 10; i++) {
+    // Add values to the linked list
+    for (size_t i = 0; i < count; i++) {
         if (list_add(list, &values[i]) == -1) {
             printf("Failed to add element %d\n", values[i]);
-            return 1;
+            list_destroy(list, NULL);
+            return;
         }
     }
 
@@ -45,5 +48,40 @@ int main(void) {
 
     // Free memory
     list_destroy(list, NULL);
+}
+
+int main(void) {
+    // Test Case 1: Random unordered numbers
+    int values1[] = {4, 1, 7, 3, 9, 2, 6, 5, 8, 0};
+    test_merge_sort(values1, 10, "Random Order");
+
+    // Test Case 2: Already sorted numbers
+    int values2[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    test_merge_sort(values2, 10, "Already Sorted");
+
+    // Test Case 3: Reverse order
+    int values3[] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
+    test_merge_sort(values3, 10, "Reverse Order");
+
+    // Test Case 4: All elements are the same
+    int values4[] = {5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+    test_merge_sort(values4, 10, "All Same Elements");
+
+    // Test Case 5: Some repeating elements
+    int values5[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
+    test_merge_sort(values5, 10, "Repeating Elements");
+
+    // Test Case 6: Single element list
+    int values6[] = {42};
+    test_merge_sort(values6, 1, "Single Element");
+
+    // Test Case 7: Two elements, already sorted
+    int values7[] = {1, 2};
+    test_merge_sort(values7, 2, "Two Elements Sorted");
+
+    // Test Case 8: Two elements, reversed
+    int values8[] = {2, 1};
+    test_merge_sort(values8, 2, "Two Elements Reversed");
+
     return 0;
 }
