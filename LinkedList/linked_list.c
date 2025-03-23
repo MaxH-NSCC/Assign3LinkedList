@@ -282,7 +282,7 @@ void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right)
 };
 
 // Recursively sorts the linked list using merge sort
-void merge_sort_nodes() {
+LinkedListNode *merge_sort_nodes(LinkedListNode *head, int (*compare)(const void *, const void *)) {
 
 };
 

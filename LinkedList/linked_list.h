@@ -66,4 +66,6 @@ LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, 
 
 void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right);
 
+LinkedListNode *merge_sort_nodes(LinkedListNode *head, int (*compare)(const void *, const void *));
+
 #endif //LINKED_LIST_H
