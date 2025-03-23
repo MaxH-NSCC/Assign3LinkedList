@@ -1,45 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
-
 #include "linked_list.h"
 
-int test_split_list() {
-    LinkedList *list = list_create();
-
-    // Add elements to linked list
-    int values[] = {1, 2, 3, 4, 5, 6};
-    for (int i = 0; i < 6; i++) {
-        list_add(list, &values[i]);
-    }
-
-    // Pointers for split lists
-    LinkedListNode *left = NULL;
-    LinkedListNode *right = NULL;
-
-    // Call split_list
-    split_list(list, &left, &right);
-
-    // Ensure both parts exist
-    if (!left || !right) return -1;
-
-    // Free list
-    list_destroy(list, NULL);
-
-    // Success
-    return 0;
-}
-
 int main(void) {
-    int result = 0;
-
-    // split list test
-    result = test_split_list();
-    if (result == 0) {
-        printf("split_list succeeded\n");
-    } else {
-        printf("split_list failed\n");
+    // Create a linked list
+    LinkedList *list = list_create();
+    if (!list) {
+        printf("Failed to create list.\n");
+        return 1;
     }
-    return 0;
 
+    // Add unordered ints
+    int values[] = {4, 1, 7, 3, 9, 2, 6, 5, 8, 0};
+    for (int i = 0; i < 10; i++) {
+        if (list_add(list, &values[i]) == -1) {
+            printf("Failed to add element %d\n", values[i]);
+            return 1;
+        }
+    }
+
+    // Print the list before sorting
+    printf("Before sorting:\n");
+    for (size_t i = 0; i < list_size(list); i++) {
+        void *data;
+        if (list_get_at(list, i, &data) == 0) {
+            printf("%d -> ", *(int *)data);
+        }
+    }
+    printf("NULL\n");
+
+    // Sort the list using merge sort
+    list_merge_sort(list, compare_ints);
+
+    // Print the list after sorting
+    printf("After sorting:\n");
+    for (size_t i = 0; i < list_size(list); i++) {
+        void *data;
+        if (list_get_at(list, i, &data) == 0) {
+            printf("%d -> ", *(int *)data);
+        }
+    }
+    printf("NULL\n");
+
+    // Free memory
+    list_destroy(list, NULL);
+    return 0;
 }
