@@ -258,25 +258,29 @@ LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, 
 // Centre position is calculated by getting size/2
 // Finds the middle of the linked list by iterating through it until it reaches the centre
 // Split list at middle point
-void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right) {
-    if (list == NULL || list->head->next == NULL) {
-        *left = NULL;
-        *right = NULL;
-        return;
-    }
-    size_t size = list_size(list);
-    if (size == 2) {
-        *left = list->head;
+void split_list(LinkedListNode *head, LinkedListNode **left, LinkedListNode **right) {
+    if (head == NULL || head->next == NULL) {
+        *left = head;
         *right = NULL;
         return;
     }
 
-    LinkedListNode * cursor = list->head;
-    for (size_t i = 0; i < (size / 2); i++) {
+    LinkedListNode *cursor = head;
+    size_t count = 0;
+
+    while (cursor != NULL) {
+        count++;
         cursor = cursor->next;
     }
 
-    *left = list->head;
+    size_t mid = count / 2;
+    cursor = head;
+
+    for (size_t i = 0; i < mid - 1; i++) {
+        cursor = cursor->next;
+    }
+
+    *left = head;
     *right = cursor->next;
     cursor->next = NULL;
 };
