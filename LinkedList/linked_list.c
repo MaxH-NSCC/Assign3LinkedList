@@ -226,6 +226,32 @@ int compare_ints(const void *a, const void *b) {
         return 0;
     }
 }
+// Compare version for char type
+int compare_chars(const void *a, const void *b) {
+    char *char_a = (char *)a;
+    char *char_b = (char *)b;
+    if (*char_a > *char_b) {
+        return 1;
+    } else if (*char_a < *char_b) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+// Compare version for float type
+int compare_floats(const void *a, const void *b) {
+    float *float_a = (float *)a;
+    float *float_b = (float *)b;
+    if (*float_a > *float_b) {
+        return 1;
+    } else if (*float_a < *float_b) {
+        return -1;
+    } else {
+        return 0;
+    }
+}
+
+
 
 // Merge two linked lists into one sorted list
 // Takes two list nodes left and right that represent sorted lists
