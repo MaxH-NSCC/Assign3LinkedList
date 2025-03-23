@@ -238,6 +238,8 @@ LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, 
 
     LinkedListNode *result = NULL;
 
+    // Compare the data of both nodes and choose the smaller one as the head
+    // After recursively merge the remaining nodes of left with right
     if (compare(left->data, right->data) <= 0) {
         result = left;
         result->next = merge_sorted_lists(left->next, right, compare);
@@ -264,21 +266,26 @@ void split_list(LinkedListNode *head, LinkedListNode **left, LinkedListNode **ri
     LinkedListNode *cursor = head;
     size_t count = 0;
 
+    // Count the total number of nodes in the list
     while (cursor != NULL) {
         count++;
         cursor = cursor->next;
     }
 
+    // Find the middle index
     size_t mid = count / 2;
     cursor = head;
 
+    // Go to the node just before the midpoint
     for (size_t i = 0; i < mid - 1; i++) {
         cursor = cursor->next;
     }
 
+    // Right half starts from the next node after midpoint
+    // Left half starts from head
     *left = head;
     *right = cursor->next;
-    cursor->next = NULL;
+    cursor->next = NULL; // Split the list by setting next pointer of midpoint to NULL
 };
 
 // Recursively sorts the linked list using merge sort
@@ -292,11 +299,14 @@ LinkedListNode *merge_sort_nodes(LinkedListNode *head, int (*compare)(const void
     LinkedListNode *left;
     LinkedListNode *right;
 
+    // Split the list into two halves
     split_list(head, &left, &right);
 
+    // Recursively sort each half
     left = merge_sort_nodes(left, compare);
     right = merge_sort_nodes(right, compare);
 
+    // Merge the sorted halves and return the new sorted list head
     return merge_sorted_lists(left, right, compare);
 };
 
