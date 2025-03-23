@@ -301,6 +301,16 @@ LinkedListNode *merge_sort_nodes(LinkedListNode *head, int (*compare)(const void
 };
 
 // Sorts a linked list using the merge sort
-void list_merge_sort() {
+void list_merge_sort(LinkedList *list, int (*compare)(const void *, const void *)) {
+    if (list == NULL || list->head == NULL || list->size < 2) {
+        return;
+    }
 
+    list->head = merge_sort_nodes(list->head, compare);
+
+    LinkedListNode *current = list->head;
+    while (current->next != NULL) {
+        current = current->next;
+    }
+    list->tail = current;
 };
