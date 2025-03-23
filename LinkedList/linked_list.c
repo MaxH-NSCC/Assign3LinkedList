@@ -227,10 +227,6 @@ int compare_ints(const void *a, const void *b) {
     }
 }
 
-int compare_chars();
-
-int compare_floats();
-
 // Merge two linked lists into one sorted list
 // Takes two list nodes left and right that represent sorted lists
 // Recursively merge the nodes together in order
@@ -253,11 +249,11 @@ LinkedListNode *merge_sorted_lists(LinkedListNode *left, LinkedListNode *right, 
     return result;
 };
 
-// Split linked list into two halves
-// First half is 1/2 the size of the linked list other half is the remaining nodes
-// Centre position is calculated by getting size/2
-// Finds the middle of the linked list by iterating through it until it reaches the centre
-// Split list at middle point
+// Splits a linked list into two halves.
+// The midpoint is determined by counting the total number of nodes and dividing by 2.
+// The left half starts from the original head and includes the first (size/2) nodes.
+// The right half starts from the next node after the midpoint and contains the remaining nodes.
+// The function modifies the input list by setting the next pointer of the midpoint node to NULL, effectively splitting it into two lists.
 void split_list(LinkedListNode *head, LinkedListNode **left, LinkedListNode **right) {
     if (head == NULL || head->next == NULL) {
         *left = head;
