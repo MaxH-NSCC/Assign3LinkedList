@@ -282,8 +282,22 @@ void split_list(LinkedList *list, LinkedListNode **left, LinkedListNode **right)
 };
 
 // Recursively sorts the linked list using merge sort
+// If the list is empty or only has one node, return it
+// if larger split the list, recursively sort both halves, then merge.
 LinkedListNode *merge_sort_nodes(LinkedListNode *head, int (*compare)(const void *, const void *)) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
 
+    LinkedListNode *left;
+    LinkedListNode *right;
+
+    split_list(head, &left, &right);
+
+    left = merge_sort_nodes(left, compare);
+    right = merge_sort_nodes(right, compare);
+
+    return merge_sorted_lists(left, right, compare);
 };
 
 // Sorts a linked list using the merge sort
